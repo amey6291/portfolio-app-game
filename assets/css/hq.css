@@ -1,0 +1,96 @@
+/* ---------- Final level: HQ (warm daylight, navy glass, gold) ---------- */
+.hq {
+  --ink: #1f2633;
+  --navy: #2f3e5c;
+  --gold: #e0a526;
+  --blueprint: #1f5fa8;
+  background: linear-gradient(#ffc48f, #ffe3c4 55%, #fff4e6);
+  color: var(--ink);
+}
+.hq .glass {
+  top: auto; height: 58vh; bottom: var(--ground);
+  background:
+    linear-gradient(rgba(255, 255, 255, .25) 0 3px, transparent 3px) 0 0 / 100% 22px,
+    linear-gradient(90deg, rgba(255, 255, 255, .2) 0 3px, transparent 3px) 0 0 / 26px 100%,
+    repeating-linear-gradient(90deg, #6d7f9e 0 140px, transparent 140px 190px, #8293b0 190px 260px, transparent 260px 340px);
+  clip-path: polygon(0 35%, 9% 35%, 9% 12%, 16% 12%, 16% 45%, 24% 45%, 24% 25%, 33% 25%, 33% 52%, 41% 52%, 41% 18%, 49% 18%, 49% 40%, 58% 40%, 58% 28%, 66% 28%, 66% 50%, 74% 50%, 74% 15%, 82% 15%, 82% 42%, 91% 42%, 91% 30%, 100% 30%, 100% 100%, 0 100%);
+  opacity: .55;
+}
+.hq .hq-tower {
+  position: absolute; left: 62%; bottom: var(--ground); width: 220px; height: 70vh;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .22) 0 4px, transparent 4px) 12px 60px / 34px 100%,
+    linear-gradient(rgba(255, 255, 255, .22) 0 4px, transparent 4px) 0 60px / 100% 30px,
+    var(--navy);
+  border-radius: 10px 10px 0 0;
+}
+.hq .hq-tower span {
+  position: absolute; left: 50%; top: 12px; translate: -50% 0;
+  font: 900 28px/1 var(--mono); letter-spacing: .2em; color: var(--gold);
+}
+.hq .ground {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 118px, rgba(31, 38, 51, .12) 118px 120px),
+    linear-gradient(#e9e2d6, #d8cfbf);
+  border-top: 4px solid var(--navy);
+}
+
+.hq .level-card .num, .hq .level-card .dates { color: #b5521b; font-family: var(--mono); }
+.hq .cluster-head .tag { color: var(--blueprint); opacity: 1; }
+
+/* Power-ups: blueprint sheets */
+.hq .chip {
+  width: 52px; height: 38px; border-radius: 3px;
+  background:
+    linear-gradient(rgba(255, 255, 255, .35) 1px, transparent 1px) 0 0 / 8px 8px,
+    linear-gradient(90deg, rgba(255, 255, 255, .35) 1px, transparent 1px) 0 0 / 8px 8px,
+    #7a95bd;
+  box-shadow: 3px 3px 0 rgba(31, 38, 51, .25);
+}
+.hq .t-strong .chip { width: 62px; height: 46px; background-color: #3f73b4; }
+.hq .t-core .chip { width: 76px; height: 56px; background-color: var(--blueprint); box-shadow: 4px 4px 0 var(--gold); }
+.hq .bar { background: rgba(31, 38, 51, .12); }
+.hq .bar i { background: var(--blueprint); }
+.hq .t-core .bar i { background: linear-gradient(90deg, var(--blueprint), var(--gold)); }
+.hq .tier { color: var(--blueprint); opacity: 1; }
+.hq .t-core .tier { color: #a3700f; }
+.hq .bubble { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+/* Trophy room */
+.trophies { position: relative; width: min(560px, 88vw); }
+.game .trophies { margin-bottom: 14vh; margin-right: 6vw; }
+.trophies h3 { display: flex; flex-direction: column; gap: 4px; font-size: 1.25rem; margin-bottom: 14px; }
+.trophies .tag { font: 700 11px/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: #b5521b; }
+.trophies ul { display: flex; flex-wrap: wrap; gap: 18px 14px; align-items: flex-end; list-style: none; padding: 0; margin: 0; }
+.trophies li { width: 96px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.cup svg { display: block; filter: drop-shadow(0 4px 0 rgba(31, 38, 51, .2)); }
+.game .cup svg { animation: shine 3s ease-in-out infinite; }
+@keyframes shine { 50% { filter: drop-shadow(0 0 10px rgba(224, 165, 38, .8)); } }
+.cert { font-size: .8rem; font-weight: 700; line-height: 1.25; }
+.shelf { height: 14px; margin-top: 10px; border-radius: 3px; background: linear-gradient(#8a5a35, #6b4426); box-shadow: 0 6px 0 rgba(31, 38, 51, .2); }
+
+/* ---------- Continue? ---------- */
+.continue { background: #07070c; color: #f4f1e8; }
+.continue .scanlines {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .03) 0 1px, transparent 1px 3px);
+}
+.continue .ground { background: #111119; border-top: 3px solid #ffd166; }
+.game .continue { width: 100vw; }
+.game .continue .stage { align-items: center; padding-left: max(42vw, 380px); padding-right: 6vw; }
+.continue-card { max-width: min(560px, calc(100vw - 32px)); }
+.continue h2 {
+  display: flex; align-items: baseline; gap: 20px;
+  font: 900 clamp(2.6rem, 7vw, 4.6rem)/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: #ffd166;
+}
+.count { color: #ff5a6e; min-width: 1ch; }
+html:not(.game) .count { display: none; }
+.continue .lede { margin: 16px 0 22px; font-size: 1.1rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding: 0; margin: 0; }
+.continue .btn { background: #ffd166; border-color: #ffd166; color: #07070c; box-shadow: 4px 4px 0 #ff5a6e; }
+.continue .alt { margin-top: 20px; opacity: .8; }
+
+@media (max-width: 700px) {
+  .game .continue .stage { align-items: flex-start; padding: calc(var(--hud-h) + 20vh) 16px 0; }
+  .trophies li { width: 84px; }
+}

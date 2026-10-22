@@ -1,0 +1,82 @@
+/* ---------- Level 6: AI Frontier (deep violet, magenta, cyan) ---------- */
+.lv6 {
+  --magenta: #ff4fd8;
+  --ice: #6ef3ff;
+  --lilac: #efe3ff;
+  background: radial-gradient(ellipse at 50% 110%, #4a1d6e, #1a0f2e 60%, #0e0820);
+  color: var(--lilac);
+}
+.lv6 .net {
+  background:
+    radial-gradient(3px 3px at 40px 50px, var(--ice) 60%, transparent 65%),
+    radial-gradient(3px 3px at 150px 120px, var(--magenta) 60%, transparent 65%),
+    radial-gradient(2px 2px at 230px 40px, var(--lilac) 60%, transparent 65%),
+    linear-gradient(32deg, transparent 49.6%, rgba(110, 243, 255, .16) 50%, transparent 50.4%),
+    linear-gradient(-24deg, transparent 49.6%, rgba(255, 79, 216, .14) 50%, transparent 50.4%);
+  background-size: 260px 170px;
+  opacity: .9;
+}
+.lv6 .horizon {
+  position: absolute; left: 0; right: 0; bottom: var(--ground); height: 30vh;
+  background: linear-gradient(transparent, rgba(255, 79, 216, .18));
+}
+.lv6 .ground {
+  background:
+    repeating-linear-gradient(90deg, rgba(110, 243, 255, .35) 0 2px, transparent 2px 72px),
+    repeating-linear-gradient(rgba(110, 243, 255, .25) 0 2px, transparent 2px 26px),
+    linear-gradient(#2a1046, #0e0820);
+  border-top: 3px solid var(--magenta);
+  box-shadow: 0 -6px 26px rgba(255, 79, 216, .45);
+}
+
+.lv6 .level-card .num, .lv6 .level-card .dates { color: var(--ice); font-family: var(--mono); }
+.lv6 .cluster-head .tag { color: var(--magenta); opacity: 1; }
+
+/* Power-ups: glowing orbs */
+.lv6 .chip {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--ice) 35%, #2b6f8a 75%);
+  box-shadow: 0 0 14px rgba(110, 243, 255, .5);
+}
+.lv6 .t-core .chip {
+  width: 70px; height: 70px;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--magenta) 38%, #7a1a6a 78%);
+  box-shadow: 0 0 26px rgba(255, 79, 216, .7);
+}
+.lv6 .bar { background: rgba(239, 227, 255, .14); }
+.lv6 .bar i { background: var(--ice); }
+.lv6 .t-core .bar i { background: linear-gradient(90deg, var(--magenta), var(--ice)); }
+.lv6 .tier { color: var(--ice); }
+.lv6 .t-core .tier { color: var(--magenta); }
+.lv6 .bubble { background: var(--lilac); color: #1a0f2e; border-color: var(--lilac); }
+
+.companion {
+  padding: 12px 16px; border-radius: 12px; border: 2px dashed var(--ice);
+  font-family: var(--mono); background: rgba(14, 8, 32, .6);
+}
+.companion .k { font: 700 11px/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ice); }
+.game .companion { margin-bottom: 40vh; }
+
+/* Agent loop: four nodes in a ring that light up in turn */
+.agent { width: min(360px, 84vw); }
+.game .agent { margin-bottom: 16vh; margin-right: 8vw; }
+.agent .k { font: 700 12px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--magenta); margin-bottom: 12px; }
+.loop {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 54px 40px;
+  list-style: none; padding: 0; margin: 0; counter-reset: step;
+}
+.loop::before { /* the ring */
+  content: ""; position: absolute; inset: 22px 18%; border-radius: 40px;
+  border: 3px dashed rgba(110, 243, 255, .5);
+}
+.loop li {
+  --on: clamp(0, calc(var(--p, 1) * 4.4 - var(--i)), 1);
+  position: relative; padding: 14px 12px; border-radius: 12px; text-align: center;
+  font-weight: 700; font-size: .9rem; line-height: 1.25;
+  background: color-mix(in srgb, var(--magenta) calc(var(--on) * 100%), #2a1846);
+  color: color-mix(in srgb, #fff calc(var(--on) * 100%), #9b8bbd);
+  box-shadow: 0 0 calc(var(--on) * 24px) rgba(255, 79, 216, .7);
+}
+/* Clockwise order: top-left, top-right, bottom-right, bottom-left. */
+.loop li:nth-child(3) { grid-column: 2; grid-row: 2; }
+.loop li:nth-child(4) { grid-column: 1; grid-row: 2; }

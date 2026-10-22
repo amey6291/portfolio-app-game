@@ -1,0 +1,111 @@
+/* ---------- Level 3: The Pipeline Factory (steel, safety orange, conveyor) ---------- */
+.lv3 {
+  --steel: #8fa0b5;
+  --steel-dk: #4a5468;
+  --orange: #ff8a3d;
+  --yellow: #ffd23f;
+  --go: #3ddc84;
+  --stop: #ff5a4e;
+  background: linear-gradient(#262a35, #353b4a 70%, #414858);
+  color: #eef2f7;
+}
+.lv3 .windows {
+  top: 10%; bottom: auto; height: 42%;
+  background:
+    linear-gradient(90deg, transparent 0 8px, rgba(255, 210, 63, .08) 8px 92px, transparent 92px) 0 0 / 100px 50%,
+    repeating-linear-gradient(90deg, #2f3442 0 400px, transparent 400px 460px);
+  opacity: .9;
+}
+.lv3 .belt {
+  top: auto; bottom: calc(var(--ground) - 14px); height: 14px;
+  background: repeating-linear-gradient(90deg, #1a1d24 0 26px, #2d323e 26px 30px);
+  border-top: 2px solid #5a6478;
+}
+.lv3 .gear { position: absolute; color: #323848; }
+.lv3 .g1 { left: 22%; top: 18%; }
+.lv3 .g2 { left: 26.5%; top: 9%; }
+.lv3 .g3 { left: 63%; top: 24%; }
+.game .lv3 .gear { animation: spin 14s linear infinite; }
+.game .lv3 .g2 { animation-direction: reverse; animation-duration: 9s; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.lv3 .ground {
+  background:
+    radial-gradient(circle at 50% 12px, #8fa0b5 0 9px, #4a5468 10px 12px, transparent 13px) 0 0 / 48px 100% repeat-x,
+    linear-gradient(transparent 0 26px, #1d2029 26px);
+  background-color: #262a33;
+  border-top: 4px solid #5a6478;
+}
+/* Hazard stripe along the belt frame. */
+.lv3 .ground::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 28px; height: 10px;
+  background: repeating-linear-gradient(45deg, var(--yellow) 0 12px, #1d2029 12px 24px);
+  opacity: .8;
+}
+
+.lv3 .level-card h2 { color: #fff; }
+.lv3 .level-card .num, .lv3 .level-card .dates { color: var(--orange); font-family: var(--mono); }
+.lv3 .cluster-head { color: #fff; }
+.lv3 .cluster-head .tag { color: var(--yellow); opacity: 1; }
+
+/* Machines */
+.machine { display: flex; flex-direction: column; align-items: center; }
+.game .machine { margin-bottom: 0; }
+.housing {
+  position: relative; width: 230px; padding: 18px 18px 16px;
+  background: linear-gradient(#4a5468, #3a4252); border-radius: 12px 12px 4px 4px;
+  border: 3px solid #1d2029; box-shadow: inset 0 3px 0 rgba(255, 255, 255, .12), 6px 6px 0 rgba(0, 0, 0, .3);
+}
+.stage-name { font: 800 1.6rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); }
+.what { font-size: .85rem; margin: 6px 0 12px; color: #d5dce6; }
+.meter { display: block; height: 10px; border-radius: 5px; background: #1d2029; overflow: hidden; }
+.meter i {
+  display: block; height: 100%; transform-origin: left; transform: scaleX(var(--p, 1));
+  background: color-mix(in srgb, var(--go) calc(var(--p, 1) * 100%), var(--orange));
+}
+.status { position: relative; height: 1.2em; margin-top: 10px; font: 700 12px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.status b { position: absolute; left: 0; }
+.status .run { color: var(--orange); opacity: clamp(0, calc((.97 - var(--p, 1)) * 40), 1); }
+.status .ok { color: var(--go); opacity: clamp(0, calc((var(--p, 1) - .97) * 40), 1); }
+.lamp {
+  position: absolute; top: -16px; right: 16px; width: 26px; height: 26px; border-radius: 50%;
+  border: 3px solid #1d2029;
+  background: color-mix(in srgb, var(--go) calc(var(--p, 1) * 100%), var(--stop));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--go) calc(var(--p, 1) * 100%), var(--stop));
+}
+.chute { width: 150px; height: 12vh; background: linear-gradient(90deg, #2d323e, #4a5468 30%, #2d323e); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
+html:not(.game) .chute { display: none; }
+
+/* Power-ups: crates */
+.lv3 .chip {
+  width: 46px; height: 46px; border-radius: 4px;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(0, 0, 0, .35) 46% 54%, transparent 54%),
+    linear-gradient(transparent 0 6px, rgba(0, 0, 0, .3) 6px 9px, transparent 9px calc(100% - 9px), rgba(0, 0, 0, .3) calc(100% - 9px) calc(100% - 6px), transparent 0),
+    var(--steel-dk);
+  border: 3px solid #1d2029;
+}
+.lv3 .t-strong .chip { width: 56px; height: 56px; background-color: var(--steel); }
+.lv3 .t-core .chip { width: 68px; height: 68px; background-color: var(--orange); box-shadow: 0 0 0 3px var(--yellow); }
+.lv3 .bar { background: rgba(255, 255, 255, .12); }
+.lv3 .bar i { background: var(--steel); }
+.lv3 .t-core .bar i { background: linear-gradient(90deg, var(--orange), var(--yellow)); }
+.lv3 .tier { color: var(--steel); }
+.lv3 .t-core .tier { color: var(--yellow); }
+.lv3 .bubble { background: #fff; color: #1d2029; border-color: #fff; }
+/* The belt sits on top of the roller frame. */
+.lv3 .bg { z-index: 1; }
+
+/* Crates ride an overhead line, clear of the hero's head. */
+.lv3 .chip { position: relative; }
+.lv3 .chip::before {
+  content: ""; position: absolute; left: 50%; bottom: 100%; width: 3px; height: 34px;
+  translate: -50% 0; background: #1d2029;
+}
+.game .lv3 .chip { animation: sway 3s ease-in-out infinite; transform-origin: 50% -34px; }
+@keyframes sway { 50% { transform: rotate(3deg); } }
+.game .lv3 .items { padding-top: 34px; }
+.game .lv3 .item:nth-child(even) { margin-bottom: 30px; }
+
+@media (max-width: 700px) {
+  .housing { width: 200px; }
+}

@@ -1,0 +1,72 @@
+/* ---------- Level 4: Cloud Sky (daylight blues, white, coral) ---------- */
+.lv4 {
+  --navy: #12324f;
+  --blue: #2f80c9;
+  --coral: #ff7a59;
+  --cloud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cpath d='M14 38a12 12 0 0 1-1-24A16 16 0 0 1 43 9a11 11 0 0 1 9 9 10 10 0 0 1-2 20Z'/%3E%3C/svg%3E");
+  --shield: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 48'%3E%3Cpath d='M20 0 40 7v15c0 13-9 22-20 26C9 44 0 35 0 22V7Z'/%3E%3C/svg%3E");
+  background: linear-gradient(#4fa8e8, #a9dcff 55%, #e6f6ff);
+  color: var(--navy);
+}
+.lv4 .clouds-far {
+  background:
+    radial-gradient(60px 26px at 120px 90px, #fff 98%, transparent) ,
+    radial-gradient(44px 22px at 170px 80px, #fff 98%, transparent),
+    radial-gradient(70px 24px at 470px 220px, #fff 98%, transparent),
+    radial-gradient(40px 20px at 520px 205px, #fff 98%, transparent);
+  background-size: 640px 340px;
+  opacity: .75;
+}
+.lv4 .clouds-near {
+  top: 40%;
+  background:
+    radial-gradient(110px 40px at 200px 60px, rgba(255, 255, 255, .9) 98%, transparent),
+    radial-gradient(80px 34px at 290px 44px, rgba(255, 255, 255, .9) 98%, transparent);
+  background-size: 900px 200px; background-repeat: repeat-x;
+}
+.lv4 .sun {
+  position: absolute; left: 30%; top: 14%; width: 110px; height: 110px; border-radius: 50%;
+  background: #ffd166; box-shadow: 0 0 0 18px rgba(255, 209, 102, .35), 0 0 80px 30px rgba(255, 209, 102, .5);
+}
+.lv4 .ground {
+  background:
+    radial-gradient(circle at 40px 40px, #fff 0 38px, transparent 39px) 0 -12px / 80px 80px repeat-x,
+    radial-gradient(circle at 20px 30px, #f1f9ff 0 30px, transparent 31px) 30px -2px / 96px 70px repeat-x,
+    linear-gradient(transparent 26px, #fff 26px);
+}
+
+.lv4 .level-card h2 { color: var(--navy); }
+.lv4 .level-card .num, .lv4 .level-card .dates { color: var(--navy); font-family: var(--mono); }
+.lv4 .cluster-head { color: var(--navy); }
+.lv4 .cluster-head .tag { color: var(--blue); opacity: 1; }
+
+/* Power-ups: clouds, then shields */
+.lv4 .chip {
+  width: 56px; height: 35px; background: #fff;
+  -webkit-mask: var(--cloud) center / contain no-repeat; mask: var(--cloud) center / contain no-repeat;
+}
+.lv4 .t-strong .chip { width: 68px; height: 42px; background: var(--blue); }
+.lv4 .t-core .chip { width: 84px; height: 52px; background: var(--coral); }
+.lv4 section.cluster ~ section.cluster .chip {
+  width: 36px; height: 44px; -webkit-mask-image: var(--shield); mask-image: var(--shield);
+}
+.lv4 section.cluster ~ section.cluster .t-core .chip { width: 50px; height: 60px; }
+.lv4 .item { filter: drop-shadow(0 2px 0 rgba(255, 255, 255, .6)); }
+.lv4 .t-supporting .chip { outline: 0; box-shadow: none; }
+.lv4 .name { color: var(--navy); }
+.lv4 .bar { background: rgba(18, 50, 79, .15); }
+.lv4 .bar i { background: var(--blue); }
+.lv4 .t-core .bar i { background: linear-gradient(90deg, var(--coral), #ffb35a); }
+.lv4 .tier { color: var(--blue); opacity: 1; }
+.lv4 .t-core .tier { color: #c2462a; }
+.lv4 .bubble { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+/* The hero floats overhead, so content sits low. */
+.game .lv4 .cluster, .game .lv4 .ach { margin-bottom: 18px; }
+.game .lv4 .item:nth-child(even) { margin-bottom: 0; }
+.game .lv4 .level-card { margin-bottom: 38vh; }
+.lv4 .landing p {
+  font: 700 12px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase;
+  padding: 10px 16px; border: 2px dashed var(--navy); border-radius: 999px; background: rgba(255, 255, 255, .7);
+}
+.game .lv4 .landing { margin-bottom: 18px; }

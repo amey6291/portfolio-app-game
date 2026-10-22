@@ -1,0 +1,64 @@
+# Builds the site and publishes dist/ to GitHub Pages on every push to main.
+# One-time setup: repo Settings → Pages → Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  WASM_BINDGEN: "0.2.100" # must match the wasm-bindgen pin in crates/engine/Cargo.toml
+  BINARYEN: "version_119"
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rust toolchain with wasm target
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup target add wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Install wasm-bindgen and wasm-opt (prebuilt)
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSfL "https://github.com/rustwasm/wasm-bindgen/releases/download/${WASM_BINDGEN}/wasm-bindgen-${WASM_BINDGEN}-x86_64-unknown-linux-musl.tar.gz" \
+            | tar xz --strip-components=1 -C "$HOME/bin" "wasm-bindgen-${WASM_BINDGEN}-x86_64-unknown-linux-musl/wasm-bindgen"
+          curl -sSfL "https://github.com/WebAssembly/binaryen/releases/download/${BINARYEN}/binaryen-${BINARYEN}-x86_64-linux.tar.gz" | tar xz -C "$HOME"
+          ln -s "$HOME/binaryen-${BINARYEN}/bin/wasm-opt" "$HOME/bin/wasm-opt"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Build
+        run: cargo xtask build
+
+      - name: Check every skill is on the page
+        run: python3 tests/coverage.py
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

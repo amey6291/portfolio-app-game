@@ -1,0 +1,101 @@
+/* ---------- Level 1: The Mainframe Vault (phosphor green on black) ---------- */
+.lv1 {
+  --p: #39ff7a;      /* phosphor */
+  --p-dim: #1d7a3f;
+  --p-deep: #0b2015;
+  --amber: #ffb000;
+  background: #040806;
+  color: #c6ffd8;
+}
+.lv1 .racks {
+  background:
+    radial-gradient(3px 3px at 22px 40px, var(--p) 50%, transparent 55%),
+    radial-gradient(3px 3px at 22px 140px, var(--amber) 50%, transparent 55%),
+    repeating-linear-gradient(0deg, transparent 0 22px, rgba(57, 255, 122, .07) 22px 24px),
+    repeating-linear-gradient(90deg, #08140c 0 120px, transparent 120px 190px);
+  background-size: 190px 190px, 190px 230px, auto, auto;
+  opacity: .9;
+}
+.lv1 .cables {
+  top: 28%; bottom: auto; height: 14px;
+  background: repeating-linear-gradient(90deg, var(--p-dim) 0 60px, transparent 60px 75px);
+  opacity: .35;
+  box-shadow: 0 40px 0 rgba(29, 122, 63, .25);
+}
+.lv1 .scanlines {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .25) 0 1px, transparent 1px 3px);
+}
+.lv1 .ground {
+  background:
+    repeating-linear-gradient(90deg, rgba(57, 255, 122, .18) 0 2px, transparent 2px 64px),
+    linear-gradient(#0c1a10, #050a07);
+  border-top: 3px solid var(--p);
+  box-shadow: 0 -6px 24px rgba(57, 255, 122, .25);
+}
+
+.lv1 .level-card h2, .lv1 .cluster-head { color: var(--p); text-shadow: 0 0 12px rgba(57, 255, 122, .45); }
+.lv1 .level-card .num, .lv1 .level-card .dates { color: var(--amber); }
+.lv1 .level-card { font-family: var(--mono); }
+
+/* CRT monitor job signs */
+.lv1 .panel {
+  width: min(380px, 80vw); padding: 14px; border-radius: 18px;
+  background: #16231b;
+  box-shadow: inset 0 0 0 3px #24392b, 0 0 48px rgba(57, 255, 122, .14);
+}
+.lv1 .panel .screen {
+  padding: 18px; border-radius: 10px; background: #021108;
+  font-family: var(--mono); color: var(--p);
+  text-shadow: 0 0 6px rgba(57, 255, 122, .55);
+  box-shadow: inset 0 0 30px rgba(57, 255, 122, .12);
+}
+.lv1 .panel .prompt { color: var(--p-dim); font-size: .8rem; margin-bottom: 10px; }
+.lv1 .panel h3 { font-size: 1.25rem; line-height: 1.2; }
+.lv1 .panel .company { font-weight: 700; color: #b6ffcc; margin-top: 2px; }
+.lv1 .panel .dates { color: var(--amber); font-size: .85rem; margin: 4px 0 10px; }
+.lv1 .panel .summary { font-size: .92rem; line-height: 1.45; color: #c6ffd8; }
+.lv1 .sign { display: flex; flex-direction: column; align-items: center; }
+.lv1 .post {
+  width: 18px; height: 10vh;
+  background: linear-gradient(90deg, #1a2a1f, #2c4634, #1a2a1f);
+}
+
+/* Power-ups: punched cards */
+.lv1 .chip {
+  width: 44px; height: 56px;
+  clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+  background:
+    radial-gradient(circle, #04120a 2px, transparent 2.5px) 4px 6px / 10px 9px,
+    var(--p-deep);
+  box-shadow: inset 0 0 0 2px var(--p);
+}
+.lv1 .t-strong .chip { width: 54px; height: 68px; background-color: var(--p-dim); }
+.lv1 .t-core .chip {
+  width: 66px; height: 84px; background-color: var(--p);
+  filter: drop-shadow(0 0 14px rgba(57, 255, 122, .6));
+}
+.lv1 .name { color: #d8ffe4; }
+.lv1 .t-core .name { color: var(--p); }
+.lv1 .bar { background: rgba(57, 255, 122, .14); }
+.lv1 .bar i { background: var(--p); }
+.lv1 .t-core .bar i { background: linear-gradient(90deg, var(--p), var(--amber)); }
+.lv1 .tier { color: var(--p-dim); }
+.lv1 .t-core .tier { color: var(--amber); }
+.lv1 .bubble { background: #e3ffe9; color: #03200f; border-color: #e3ffe9; }
+
+.lv1 .obstacle { margin-bottom: 0; }
+
+.lv1 .exit { display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: var(--mono); }
+.lv1 .door {
+  width: 120px; height: 180px; border: 4px solid var(--p); border-bottom: 0;
+  border-radius: 60px 60px 0 0; display: grid; place-items: center;
+  background: radial-gradient(ellipse at 50% 70%, rgba(57, 255, 122, .35), transparent 70%);
+  box-shadow: 0 0 30px rgba(57, 255, 122, .4), inset 0 0 30px rgba(57, 255, 122, .3);
+}
+.lv1 .door span { font-weight: 700; letter-spacing: .2em; color: var(--p); }
+.lv1 .exit p { order: -1; color: var(--amber); font-size: .9rem; }
+.game .lv1 .exit { margin-right: 6vw; }
+
+/* Static layout: keep the terminal look, drop the floor props. */
+html:not(.game) .lv1 .sign { width: min(380px, 100%); }

@@ -1,0 +1,59 @@
+/* The hero: fixed on screen, the world moves under them. */
+#hero {
+  position: fixed; z-index: 10;
+  left: var(--hero-x); bottom: var(--ground);
+  width: 64px; height: 100px;
+  translate: -50% 0;
+  scale: 1.25; transform-origin: bottom center;
+  pointer-events: none;
+}
+#hero::after { /* shadow */
+  content: ""; position: absolute; left: 10px; right: 10px; bottom: -5px; height: 8px;
+  border-radius: 50%; background: rgba(0, 0, 0, .45);
+}
+.hero-svg { display: block; overflow: visible; transition: transform .15s; }
+#hero.left .hero-svg { transform: scaleX(-1); }
+
+.hero-svg .leg { transform-origin: 32px 64px; }
+.hero-svg .arm { transform-origin: 33px 43px; }
+.hero-svg .body { animation: breathe 2.4s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: translateY(1px); } }
+
+#hero.walking .body { animation: step .36s ease-in-out infinite; }
+#hero.walking .leg-f, #hero.walking .arm-b { animation: swing .36s ease-in-out infinite alternate; }
+#hero.walking .leg-b, #hero.walking .arm-f { animation: swing .36s ease-in-out infinite alternate-reverse; }
+@keyframes swing { from { transform: rotate(-28deg); } to { transform: rotate(28deg); } }
+@keyframes step { 50% { transform: translateY(-3px); } }
+
+#hero.jumping .body { animation: none; }
+#hero.jumping .leg-f { animation: none; transform: rotate(-35deg); }
+#hero.jumping .leg-b { animation: none; transform: rotate(20deg); }
+#hero.jumping .arm-f { animation: none; transform: rotate(-115deg); }
+#hero.jumping .arm-b { animation: none; transform: rotate(-150deg); }
+
+@media (max-width: 700px) {
+  #hero { scale: .85; }
+}
+
+/* ---------- Level modes (set from the level's data-hero) ---------- */
+.hero-svg .balloons, .hero-svg .drone { display: none; }
+
+/* Float: balloons up, legs dangling, gentle bob. */
+#hero.float .balloons { display: inline; }
+#hero.float .hero-svg { animation: drift 2.6s ease-in-out infinite; }
+#hero.float .body, #hero.float .leg-f, #hero.float .leg-b, #hero.float .arm-f { animation: none; }
+#hero.float .leg-f { transform: rotate(14deg); }
+#hero.float .leg-b { transform: rotate(-8deg); }
+#hero.float .arm-f { transform: rotate(8deg); }
+#hero.float .arm-b { animation: none; transform: rotate(160deg); }
+#hero.float::after, #hero.jumping::after { opacity: 0; }
+@keyframes drift { 50% { translate: 0 -9px; } }
+
+/* Ride: stand still on the conveyor; the world does the moving. */
+#hero.ride .leg-f, #hero.ride .leg-b, #hero.ride .arm-f, #hero.ride .arm-b { animation: none; }
+#hero.ride.walking .body { animation: rattle .18s linear infinite; }
+@keyframes rattle { 50% { transform: translateY(1px); } }
+
+/* Drone companion. */
+#hero.drone .drone { display: inline; animation: hover 1.6s ease-in-out infinite; }
+@keyframes hover { 50% { translate: 0 -6px; } }

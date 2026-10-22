@@ -1,0 +1,36 @@
+{
+  "name": "Amey Maldikar",
+  "title": "Senior Consultant, Enterprise Architecture Project Lead at Deloitte Consulting",
+  "location": "Mumbai, India",
+  "experience": "12+ years",
+  "domain": "Healthcare and Life Sciences",
+  "intro": "From mainframe to cloud to AI: 12+ years of building and running healthcare platforms.",
+  "career_start": "2014-03",
+  "jobs": [
+    {
+      "role": "Software Engineer",
+      "company": "Syntel (now Atos)",
+      "start": "2014-03",
+      "end": "2016-06",
+      "summary": "Mainframe premium billing system for a US Medicare/Medicaid payer."
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "Capgemini",
+      "start": "2016-06",
+      "end": "2017-08",
+      "summary": "Mainframe back end for a healthcare services provider."
+    },
+    {
+      "role": "Senior Consultant",
+      "company": "Deloitte Consulting",
+      "start": "2017-08",
+      "end": null,
+      "summary": "Enterprise architecture, cloud, DevSecOps, SRE and integration platforms."
+    }
+  ],
+  "contact": {
+    "email": "maldikar.amey6291@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/amey-maldikar-a5a68b13a"
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "source_resumes": 19,
+  "tiers": {
+    "core": "in 12+ resumes",
+    "strong": "in 5-11 resumes",
+    "supporting": "in 1-4 resumes"
+  },
+  "categories": [
+    {
+      "category": "Cloud & AWS",
+      "icon": "cloud",
+      "skills": [
+        {
+          "skill": "AWS (architecture & deployment)",
+          "resumes": 18,
+          "tier": "core",
+          "proof": "Containerized microservice platform on AWS, all infra in Terraform"
+        },
+        {
+          "skill": "Cloud cost optimization & tagging",
+          "resumes": 14,
+          "tier": "core",
+          "proof": "Tagging standards in Terraform for cost allocation"
+        },
+        {
+          "skill": "Hybrid cloud operations",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "Cloud migration planning & estimation",
+          "resumes": 12,
+          "tier": "core",
+          "proof": "Estimation, roadmaps and spend forecasting for AWS migrations"
+        },
+        {
+          "skill": "EC2 & Auto Scaling",
+          "resumes": 6,
+          "tier": "strong"
+        },
+        {
+          "skill": "CloudWatch",
+          "resumes": 6,
+          "tier": "strong",
+          "proof": "Dashboards and centralized logging across the ECS platform"
+        },
+        {
+          "skill": "IAM",
+          "resumes": 6,
+          "tier": "strong",
+          "proof": "Least-privilege IAM and private service paths"
+        },
+        {
+          "skill": "VPC networking",
+          "resumes": 6,
+          "tier": "strong"
+        },
+        {
+          "skill": "Amazon ECS",
+          "resumes": 5,
+          "tier": "strong",
+          "proof": "Rolling, zero-downtime ECS deployments"
+        },
+        {
+          "skill": "RDS",
+          "resumes": 5,
+          "tier": "strong"
+        },
+        {
+          "skill": "Redis",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Amazon MQ",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "ALB & AWS Cloud Map",
+          "resumes": 4,
+          "tier": "supporting",
+          "proof": "Private service-to-service communication"
+        },
+        {
+          "skill": "AWS Config & Service Control Policies",
+          "resumes": 4,
+          "tier": "supporting",
+          "proof": "Preventive and detective guardrails"
+        },
+        {
+          "skill": "Multi-account landing zone design",
+          "resumes": 4,
+          "tier": "supporting",
+          "proof": "OU taxonomy, account baselines, automated account provisioning"
+        },
+        {
+          "skill": "Amazon EKS",
+          "resumes": 3,
+          "tier": "supporting"
+        },
+        {
+          "skill": "S3",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Systems Manager (patching)",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "API Gateway (AWS)",
+          "resumes": 1,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Route 53",
+          "resumes": 1,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Infrastructure as Code & Containers",
+      "icon": "cube",
+      "skills": [
+        {
+          "skill": "Linux administration (RHEL/Unix)",
+          "resumes": 19,
+          "tier": "core",
+          "proof": "Upgrades and tooling on 55+ Linux servers"
+        },
+        {
+          "skill": "Ansible",
+          "resumes": 14,
+          "tier": "core"
+        },
+        {
+          "skill": "Python automation",
+          "resumes": 14,
+          "tier": "core",
+          "proof": "Python utility validates 25,000 notices daily"
+        },
+        {
+          "skill": "Terraform",
+          "resumes": 13,
+          "tier": "core",
+          "proof": "Authored and reviewed Terraform for VPC, RDS, Redis, MQ, IAM"
+        },
+        {
+          "skill": "Docker",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "Kubernetes",
+          "resumes": 13,
+          "tier": "core",
+          "proof": "Containerizing legacy monoliths; 138+ environments"
+        },
+        {
+          "skill": "Configuration drift control",
+          "resumes": 8,
+          "tier": "strong"
+        },
+        {
+          "skill": "PDF parsing & automated data validation (Python)",
+          "resumes": 4,
+          "tier": "supporting",
+          "proof": "Parses PDF notices incl. grids, headers and QR codes"
+        },
+        {
+          "skill": "Shell & PowerShell scripting",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Helm",
+          "resumes": 1,
+          "tier": "supporting"
+        },
+        {
+          "skill": "ArgoCD / GitOps",
+          "resumes": 1,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "CI/CD & DevOps",
+      "icon": "pipeline",
+      "skills": [
+        {
+          "skill": "Bamboo",
+          "resumes": 19,
+          "tier": "core",
+          "proof": "Low-touch pipelines across 138+ logical environments"
+        },
+        {
+          "skill": "GitHub / Git",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "Ant",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "Jenkins",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "SonarQube",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "Pipeline quality & security gates",
+          "resumes": 12,
+          "tier": "core",
+          "proof": "Scans run in the pipeline so findings surface before release"
+        },
+        {
+          "skill": "Automated build, test & DB migration",
+          "resumes": 10,
+          "tier": "strong"
+        },
+        {
+          "skill": "Zero-downtime / rolling deployment",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Release & environment management",
+          "resumes": 3,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Observability, SRE & Reliability",
+      "icon": "pulse",
+      "skills": [
+        {
+          "skill": "Splunk",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "SRE practices",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "New Relic",
+          "resumes": 11,
+          "tier": "strong"
+        },
+        {
+          "skill": "Fault tolerance & resiliency",
+          "resumes": 11,
+          "tier": "strong"
+        },
+        {
+          "skill": "Centralized logging & dashboards",
+          "resumes": 11,
+          "tier": "strong"
+        },
+        {
+          "skill": "Incident response & root-cause analysis",
+          "resumes": 5,
+          "tier": "strong"
+        },
+        {
+          "skill": "Grafana",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Datadog",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Capacity management & right-sizing",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "SLIs, SLOs & error budgets",
+          "resumes": 3,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Security, Identity & Compliance",
+      "icon": "shield",
+      "skills": [
+        {
+          "skill": "Regulated-environment compliance & change control",
+          "resumes": 17,
+          "tier": "core"
+        },
+        {
+          "skill": "Information security frameworks & governance",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "Vulnerability & code-quality scanning",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "SAST / DAST / SCA / SBOM / pen testing",
+          "resumes": 2,
+          "tier": "supporting",
+          "proof": "Co-leads an application security practice"
+        },
+        {
+          "skill": "SAML SSO & identity integration",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "SiteMinder access policy",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Active Directory integration",
+          "resumes": 2,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Integration, Data & Content Platforms",
+      "icon": "plug",
+      "skills": [
+        {
+          "skill": "Pentaho Data Integration & Business Analytics",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "IBM InfoSphere MDM",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "OpenText Exstream",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "Software AG webMethods (Integration Server & API Gateway)",
+          "resumes": 18,
+          "tier": "core",
+          "proof": "Migrated 10 nodes from Layer7; 30-45% lower licensing fees"
+        },
+        {
+          "skill": "Middleware & application server administration",
+          "resumes": 18,
+          "tier": "core"
+        },
+        {
+          "skill": "IBM FileNet",
+          "resumes": 17,
+          "tier": "core",
+          "proof": "Infra advice for a platform handling 420M+ documents a year"
+        },
+        {
+          "skill": "ETL design & tuning",
+          "resumes": 16,
+          "tier": "core"
+        },
+        {
+          "skill": "Broadcom Layer7",
+          "resumes": 11,
+          "tier": "strong"
+        },
+        {
+          "skill": "SSIS",
+          "resumes": 10,
+          "tier": "strong"
+        },
+        {
+          "skill": "Third-party integrations (Google, Twilio, Salesforce, Pelican)",
+          "resumes": 9,
+          "tier": "strong"
+        },
+        {
+          "skill": "WebSphere Liberty / WAS modernization",
+          "resumes": 8,
+          "tier": "strong",
+          "proof": "28-node middleware modernization"
+        },
+        {
+          "skill": "REST & messaging integration patterns",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "SQL Server & SQL",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Solimar",
+          "resumes": 1,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "AI-Assisted Engineering",
+      "icon": "spark",
+      "skills": [
+        {
+          "skill": "GitHub Copilot",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "MCP servers",
+          "resumes": 13,
+          "tier": "core",
+          "proof": "MCP servers and AI agents flag scan findings and enforce unit tests"
+        },
+        {
+          "skill": "AI agent workflows",
+          "resumes": 13,
+          "tier": "core"
+        },
+        {
+          "skill": "Prompt engineering",
+          "resumes": 1,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Mainframe & Legacy",
+      "icon": "terminal",
+      "skills": [
+        {
+          "skill": "Mainframe development & production support",
+          "resumes": 19,
+          "tier": "core",
+          "proof": "Premium billing system for a US Medicare/Medicaid payer"
+        },
+        {
+          "skill": "CA Gen",
+          "resumes": 15,
+          "tier": "core"
+        },
+        {
+          "skill": "COBOL",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "JCL",
+          "resumes": 4,
+          "tier": "supporting"
+        },
+        {
+          "skill": "DB2",
+          "resumes": 3,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Easytrieve, DFSORT, ICETOOL",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "Micro Focus COBOL",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "CICS, VSAM, IMS, z/OS",
+          "resumes": 2,
+          "tier": "supporting"
+        },
+        {
+          "skill": "TSO/ISPF, File-AID, Infopac",
+          "resumes": 1,
+          "tier": "supporting"
+        },
+        {
+          "skill": "CA 7",
+          "resumes": 1,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Architecture & Delivery Leadership",
+      "icon": "compass",
+      "skills": [
+        {
+          "skill": "Enterprise architecture",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "Vendor management & technology selection",
+          "resumes": 17,
+          "tier": "core"
+        },
+        {
+          "skill": "Scrum / Agile delivery",
+          "resumes": 16,
+          "tier": "core",
+          "proof": "Delivered an invoicing portal over 25 sprints"
+        },
+        {
+          "skill": "SAFe & PI planning",
+          "resumes": 15,
+          "tier": "core"
+        },
+        {
+          "skill": "Stakeholder & cross-functional communication",
+          "resumes": 15,
+          "tier": "core"
+        },
+        {
+          "skill": "Legacy-to-modern migration & modernization",
+          "resumes": 14,
+          "tier": "core"
+        },
+        {
+          "skill": "Team leadership & mentoring",
+          "resumes": 11,
+          "tier": "strong",
+          "proof": "Rebuilt a team after full attrition; 90% retention reported"
+        },
+        {
+          "skill": "Licence cost reduction",
+          "resumes": 9,
+          "tier": "strong",
+          "proof": "Cut licensing fees by moving off proprietary platforms"
+        },
+        {
+          "skill": "Technical debt remediation",
+          "resumes": 8,
+          "tier": "strong"
+        },
+        {
+          "skill": "Jira & Confluence",
+          "resumes": 8,
+          "tier": "strong"
+        },
+        {
+          "skill": "Solution architecture & standards",
+          "resumes": 5,
+          "tier": "strong"
+        },
+        {
+          "skill": "ITIL",
+          "resumes": 2,
+          "tier": "supporting"
+        }
+      ]
+    },
+    {
+      "category": "Domain Knowledge",
+      "icon": "heart",
+      "skills": [
+        {
+          "skill": "Premium billing, invoicing & ledger systems",
+          "resumes": 19,
+          "tier": "core"
+        },
+        {
+          "skill": "US Medicare & Medicaid systems",
+          "resumes": 18,
+          "tier": "core"
+        },
+        {
+          "skill": "Healthcare & Life Sciences",
+          "resumes": 17,
+          "tier": "core"
+        },
+        {
+          "skill": "US state-government systems",
+          "resumes": 6,
+          "tier": "strong"
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "source": "most resumes"
+    },
+    {
+      "name": "SAFe Certified Scrum Master",
+      "source": "most resumes"
+    },
+    {
+      "name": "Scrum Basics (internal)",
+      "source": "oldest mainframe resume"
+    },
+    {
+      "name": "Healthcare E1 Level 1 (internal)",
+      "source": "oldest mainframe resume"
+    },
+    {
+      "name": "ITIL",
+      "source": "oldest mainframe resume"
+    }
+  ],
+  "headline_numbers": [
+    "25,000 regulatory notices validated daily by a Python tool (about 50 hours/month of senior manual review removed)",
+    "138+ logical environments and 55+ Linux servers managed",
+    "10 API gateway nodes migrated from Broadcom Layer7 to Software AG webMethods, cutting annual licence fees by 30-45%",
+    "28-node middleware estate moving to WebSphere Liberty",
+    "Infra guidance for a content platform handling 420M+ documents a year",
+    "Custom vendor invoicing portal delivered over 25 sprints; won a 3-year maintenance contract",
+    "All platform infrastructure on AWS provisioned through Terraform"
+  ]
+}
